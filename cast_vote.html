@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="author" content="CodeHim">
+   <title>Appointment form UI Example</title>
+   <!-- Style CSS -->
+   <link rel="stylesheet" href="./css/style.css">
+   <!-- Demo CSS (No need to include it into your project) -->
+   <link rel="stylesheet" href="./css/demo.css">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="cast_vote.css">
+   <link rel="stylesheet" href="main.css">
+</head>
+<body>
+   <nav class="banner">
+        
+      <div class="logo">
+          <i class="fa-regular fa-square-check"></i>
+          SEHEJ-MATH
+      </div>
+      <ul class="nav-links">
+          <li><a href="./site_index.html">HOME</a></li>
+          <li><a href="./about.html">ABOUT</a></li>
+          <li><a href="./myprofile.html">PROFILE</a></li>
+          <li><a href="./sign_up.html">SIGNUP</a></li>
+          <!-- <li><a href="#" class="login">LOGIN</a></li> -->
+      </ul>
+  </nav>
+   <main class="cd__main">
+    <h1 class="h12">Cast your Vote here</h1>
+      <main id="wrapper">
+         <div class="container">
+            <form action="#" id="appoint-form" method="POST">
+               <label for="selectState" class="format">SELECT State *</label>
+               <select id="selectState" onchange="populateCities()">
+                  <option value="" disabled selected>Select Your State</option>
+                  <option value="Punjab">Punjab</option>
+                  <option value="Haryana">Haryana</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Madhya Pradesh">Madhya Pradesh</option>
+                  <option value="Chandigarh">Chandigarh</option>
+                  <option value="Himachal Pradesh">Himachal Pradesh</option>
+               </select>
+
+               <label for="selectCity" class="format">SELECT City *</label>
+               <select id="selectCity" disabled>
+                  <option value="" disabled selected>Select Your City</option>
+               </select>
+              
+               <label for="selectState" class="format">SELECT Your Party *</label>
+               <select id="selectState" onchange="populateCities()">
+                  <option value="" disabled selected>Select here</option>
+                  <option value="Punjab">Congress</option>
+                  <option value="Haryana">BJP</option>
+                  <option value="Delhi">AAP</option>
+               </select>
+        
+               <div class="personal_details" id="edit">
+                  <label  class="format" id="edit-kro">PERSONAL DETAILS</label>
+                  
+                  <div class="otp_section">
+                    <input type="text" id="name" class="person-detail" placeholder="UserName*" name="uname" maxlength="20" required>
+                  <input type="text" id="name" class="person-detail" placeholder="Enrollment Number*" name="uname" maxlength="10" required>
+                  <input type="tel" id="mobile" class="person-detail" name="ucontact" placeholder="Mobile number*" maxlength="10" required>
+                  <input type="email" placeholder="Email(optional)" id="email" class="person-detail" name="uemail" required>
+                    <label for="otpMethod" class="format"></label>
+                    <select id="otpMethod">
+                       <option value="sms" class="adjust">SMS</option>
+                       <option value="email" class="adjust">Email</option>
+                    </select>
+                    <div class="otp">
+                        <input type="text" id="otp" class="otp-field" placeholder="Enter OTP" maxlength="6">
+                    <button type="button" id="sendOTP" onclick="sendOTP()">Send OTP</button>
+                    </div>
+                 </div>
+               </div>
+
+               <!-- <div class="otp_section">
+                  <label for="otpMethod" class="format"</label>
+                  <select id="otpMethod">
+                     <option value="sms" class="adjust">SMS</option>
+                     <option value="email" class="adjust">Email</option>
+                  </select>
+                  <input type="text" id="otp" class="otp-field" placeholder="Enter OTP" maxlength="6">
+                  <button type="button" id="sendOTP" onclick="sendOTP()">Send OTP</button>
+               </div> -->
+               
+               <button type="submit" id="submit" value="Submit" width="300px">Submit</button>
+            </form>
+         </div>
+      </main>
+   </main>
+   
+   <!-- Script JS -->
+   <script src="./js/script.js"></script>
+   <!-- JavaScript for populating cities based on selected state -->
+   <script>
+      function populateCities() {
+         var selectState = document.getElementById("selectState");
+         var selectedState = selectState.options[selectState.selectedIndex].value;
+         var selectCity = document.getElementById("selectCity");
+         selectCity.innerHTML = ""; // Clear existing options
+         if (selectedState === "Punjab") {
+            var cities = ["Amritsar", "Ludhiana", "Jalandhar"];
+         } else if (selectedState === "Haryana") {
+            var cities = ["Gurgaon", "Faridabad", "Chandigarh"];
+         } else if (selectedState === "Delhi") {
+            var cities = ["New Delhi", "Noida", "Ghaziabad"];
+         } else if (selectedState === "Madhya Pradesh") {
+            var cities = ["Indore", "Bhopal", "Jabalpur"];
+         } else if (selectedState === "Chandigarh") {
+            var cities = ["Chandigarh"];
+         } else if (selectedState === "Himachal Pradesh") {
+            var cities = ["Shimla", "Manali", "Dharamshala"];
+         }
+         cities.forEach(function(city) {
+            var option = document.createElement("option");
+            option.text = city;
+            selectCity.add(option);
+         });
+         selectCity.disabled = false; // Enable city dropdown
+      }
+
+      function sendOTP() {
+         var otpMethod = document.getElementById("otpMethod").value;
+         var otpField = document.getElementById("otp");
+         if (otpMethod === "sms") {
+            // Send OTP via SMS
+            // Code to send OTP via SMS goes here
+         } else if (otpMethod === "email") {
+            // Send OTP via Email
+            // Code to send OTP via Email goes here
+         }
+         // For demonstration, let's just generate and display a random OTP
+         var randomOTP = generateOTP();
+         otpField.value = randomOTP;
+      }
+
+      function generateOTP() {
+         var otpLength = 6;
+         var digits = '0123456789';
+         var OTP = '';
+         for (let i = 0; i < otpLength; i++) {
+            OTP += digits[Math.floor(Math.random() * 10)];
+         }
+         return OTP;
+      }
+   </script>
+</body>
+<script src="cast_vote.js"></script>
+</html>

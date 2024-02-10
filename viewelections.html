@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View All Elections</title>
+<link rel="stylesheet" href="viewelections.css">
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <nav class="banner">
+        
+        <div class="logo">
+            <i class="fa-regular fa-square-check"></i>
+            SEHEJ-MATH
+        </div>
+        <ul class="nav-links">
+            <li><a href="./site_index.html">HOME</a></li>
+            <li><a href="./about.html">ABOUT</a></li>
+            <li><a href="./myprofile.html">PROFILE</a></li>
+            <li><a href="./sign_up.html">SIGNUP</a></li>
+            <!-- <li><a href="#" class="login">LOGIN</a></li> -->
+        </ul>
+    </nav>
+    <div class="container">
+        <aside class="sidebar">
+            <h1 class="sidebar-title">Voters Profile</h1>
+            <nav class="sidebar-menu">
+                <a href="./myprofile.html" class="menu-item">My Profile</a>
+                <a href="./viewelections.html" class="menu-item active">View All Elections</a>
+                <a href="./cast_vote.html" class="menu-item">Cast Vote</a>
+                <a href="./checkresult.html" class="menu-item">Check Result</a>
+                <a href="./votinghistory.html" class="menu-item">Voting History</a>
+                <a href="./site_index.html" class="menu-item">Logout</a>
+            </nav>
+        </aside>
+        <main class="content">
+            <h2 class="content-title">VIEW ALL ELECTIONS</h2>
+            <div class="form-group">
+                <label for="state">STATE-</label>
+                <select id="state">
+                    <option>Droplist</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="district">DISTRICT-</label>
+                <select id="district">
+                    <option>Droplist</option>
+                </select>
+            </div>
+            <h3 class="sub-title">PARTIES COMPETING</h3>
+            <div class="parties-grid">
+                <!-- Placeholder blocks for parties -->
+                <div class="party-block"></div>
+                <div class="party-block"></div>
+                <div class="party-block"></div>
+                <div class="party-block"></div>
+                <div class="party-block"></div>
+                <div class="party-block"></div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+    background-color:#4634d480;;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('background.jpg'); /* Put the path to the background image here */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #00000080;
+}
+
+.nav-links li {
+    display: inline;
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+}
+
+.login {
+    padding: 0.5rem 1rem;
+    border: 2px solid white;
+    border-radius: 2px;
+}
+
+header {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #e7c085;
+    font-family: cursive;
+    font-style: italic;
+}
+
+header p {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    max-width: 60%;
+    color: #e7c085;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+header button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: #0056b3;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://shorturl.at/emzFJ'); /* Replace with your actual image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Set position to relative */
+    opacity: 0.7;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* 50% opaque black background */
+    z-index: -1; /* Ensure the overlay is behind the content */
+
+}
+
+/* ...other styles... */
